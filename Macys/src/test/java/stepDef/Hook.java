@@ -10,7 +10,8 @@ import org.testng.util.Strings;
 
 public class Hook extends Config {
     public static String url;
-
+    public static String eMail;
+    public static String password;
     public static String driverType = System.getProperty("browser");
     public static String envType = System.getProperty("env");
 
@@ -23,7 +24,7 @@ public class Hook extends Config {
             driverType="ch";
         }
         driver = setupBrowser (driverType);
-        switch(envType){
+        switch (envType){
             case "qa":
                 url = "https://www.macys.com/";
 
@@ -43,7 +44,7 @@ public class Hook extends Config {
                 scenario.attach(screenshot, "image/png", scenario.getName());
             }
         } finally {
-          //  driver.quit();
+            // driver.quit();
         }
     }
 
